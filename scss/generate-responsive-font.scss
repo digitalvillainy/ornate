@@ -1,0 +1,10 @@
+@mixin generate-responsive-font{
+  @each $breakpoint, $value in $breakpoint-map {
+    @media (min-width: $value) {
+      @each $name, $step in $fontSize-map{
+        .#{$breakpoint}\:font-#{$name} { font-size: unquote($step * $spacingStep + $spacingUnit) }
+      }
+    }
+  }
+}
+@include generate-responsive-font

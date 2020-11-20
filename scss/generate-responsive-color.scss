@@ -1,0 +1,14 @@
+@mixin generate-responsive-color{
+  @each $class, $property in $color-class-map {
+    @each $subclass, $value in $color-map {
+      @each $breakpoint, $break in $breakpoint-map {
+        @media(min-width: $break) {
+          .#{$breakpoint}\:#{$class}-#{$subclass} {
+            #{$property}: $value
+          }
+        }
+      }
+    }
+  }
+}
+@include generate-responsive-color;

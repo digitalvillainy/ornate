@@ -1,13 +1,17 @@
 {
-  "name": " ",
+  "name": "OrnateCSS",
   "version": "0.0.1",
-  "description": "",
-  "keywords": "",
-  "license": "",
-  "author": "",
+  "description": "Ornate CSS is a mobile-first css framework that allows users to create",
+  "keywords": [
+    "CSS",
+    "SCSS",
+    "Framework"
+  ],
+  "license": "MIT",
+  "author": "Roberto Rivera",
   "scripts": {
     "build": "parcel build index.html",
-    "dev": "parcel index.html --open",
+    "dev": "parcel playground.html --open",
     "start": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
