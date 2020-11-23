@@ -1,0 +1,29 @@
+@mixin generate-overflow {
+  @each $name, $view in $overflow-map {
+    .overflow-#{$name} {
+      overflow: #{$view};
+    }
+    @each $direction, $axis in $overflow-direction {
+      .overflow-#{$direction}-#{$name} {
+        overflow-#{$axis}: #{$view};
+      }
+    }
+  }
+  /* Responsive action */
+  @each $breakpoint, $break in $breakpoint-map {
+    @media(min-width: $break) {
+      @each $name, $view in $overflow-map {
+        .#{$breakpoint}\:overflow-#{$name} {
+          overflow: #{$view};
+        }
+        @each $direction, $axis in $overflow-direction {
+          .#{$breakpoint}\:overflow-#{$direction}-#{$name} {
+            overflow-#{$axis}: #{$view};
+          }
+        }
+      }
+    }
+  }
+}
+
+@include generate-overflow;

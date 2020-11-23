@@ -5,9 +5,11 @@
 // custom variables
 @import "my-vars";
 
-
 // gaudiamus
 @import "../node_modules/gaudiamus-css/scss";
+
+// Show/hide
+@import "generate-show-hide";
 
 // New Responsive actions
 @import "generate-responsive-color";
@@ -17,6 +19,16 @@
 // Opacity
 @import "generate-opacity";
 
+// responsive-border
+@import "generate-responsive-border";
+
+// Overflow
+@import "generate-overflow";
+
+// Z-index
+@import "generate-z-index";
+
 // compositions
 @import "compositions";
+
 

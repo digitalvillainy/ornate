@@ -1,0 +1,14 @@
+@mixin generate-z-index{
+  @each $z, $index in $z-index-map{
+    .z-#{$z}{ z-index: #{$index}; }
+  }
+  @each $breakpoint, $break in $breakpoint-map {
+    @media(min-width: $break) {
+      @each $z, $index in $z-index-map{
+        .#{$breakpoint}\:z-#{$z}{ z-index: #{$index}; }
+      }
+    }
+  }
+
+}
+@include generate-z-index

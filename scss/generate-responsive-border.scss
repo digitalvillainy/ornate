@@ -1,0 +1,55 @@
+@mixin generate-responsive-border {
+  // Breakpoint for borders
+  @for $i from 0 to $depth {
+
+    @each $breakpoint, $break in $breakpoint-map {
+      @media(min-width: $break) {
+        @each $title, $style in $border-styles-map {
+          .#{$breakpoint}\:b-#{$i}-#{$title} {
+            border-width: #{$i}px;
+            border-style: #{$style};
+          }
+        }
+      }
+
+      @media(min-width: $break) {
+        @each $title, $style in $border-styles-map {
+          @each $name, $side in $sides {
+            .#{$breakpoint}\:b-#{$name}-#{$i}-#{$title} {
+              border-#{$side}-width: #{$i}px;
+              border-#{$side}-style: #{$style};
+            }
+          }
+        }
+      }
+
+      @media(min-width: $break) {
+        @each $title, $style in $border-styles-map {
+          @each $state in $state-map {
+            @each $name, $side in $sides {
+              .#{$breakpoint}\:#{$state}\:b-#{$name}-#{$i}-#{$title}:#{$state} {
+                border-#{$side}-width: #{$i}px;
+                border-#{$side}-style: #{$style};
+              }
+            }
+          }
+        }
+      }
+
+      @media(min-width: $break) {
+        @each $title, $style in $border-styles-map {
+          @each $state in $state-map {
+            @each $name, $side in $sides {
+              .#{$breakpoint}\:#{$state}\:b-#{$i}-#{$title}:#{$state} {
+                border-#{$side}-width: #{$i}px;
+                border-#{$side}-style: #{$style};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include generate-responsive-border;

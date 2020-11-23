@@ -1,0 +1,13 @@
+@mixin generate-show-hide {
+  @each $breakpoint, $value in $breakpoint-map {
+    @media(min-width: $value) {
+      @each $view, $display in $hidden-map {
+        .#{$breakpoint}\:#{$view} {
+          display: unquote($display);
+        }
+      }
+    }
+  }
+}
+
+@include generate-show-hide;
