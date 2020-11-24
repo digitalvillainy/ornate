@@ -168,6 +168,17 @@ $z-index-map: (
   "auto":"auto"
 );
 
+/* Cursor */
+$mouse-cursor: (
+  "cursor-auto"
+  "cursor-default"
+  "cursor-pointer"
+  "cursor-wait"
+  "cursor-text"
+  "cursor-move"
+  "cursor-not-allowed"
+);
+
 /* Transition */
 
 /* Transform */
