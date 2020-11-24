@@ -1,0 +1,17 @@
+@mixin text-align {
+  @each $align in $text-align {
+    .text-#{$align} {
+      text-align: #{$align};
+    }
+
+    @each $breakpoint, $break in $breakpoint-map {
+      @media(min-width: $break) {
+        .text-#{$align} {
+          text-align: #{$align};
+        }
+      }
+    }
+  }
+}
+
+@include text-align;

@@ -1,0 +1,6 @@
+@mixin font-styles{
+  .italic {
+    font-style: italic;
+  }
+}
+@include font-styles;

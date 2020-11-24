@@ -1,0 +1,21 @@
+@mixin text-transform {
+  @each $transform in $text-transform-map {
+    .#{$transform} {
+      text-transform: #{$transform};
+    }
+    @each $state in $state-map {
+      .#{$state}\:#{$transform} {
+        text-transform: #{$transform};
+      }
+    }
+    @each $breakpoint, $break in $breakpoint-map {
+      @media(min-width: $break)  {
+        .#{$breakpoint}\:#{$transform} {
+          text-transform: #{$transform};
+        }
+      }
+    }
+  }
+}
+
+@include text-transform;

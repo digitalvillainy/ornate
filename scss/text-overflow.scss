@@ -1,0 +1,15 @@
+@mixin text-overflow {
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .text-ellipsis{
+    text-overflow: ellipsis;
+  }
+  .text-clip{
+    text-overflow: clip;
+  }
+}
+
+@include text-overflow;

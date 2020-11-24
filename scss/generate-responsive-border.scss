@@ -1,7 +1,6 @@
 @mixin generate-responsive-border {
   // Breakpoint for borders
   @for $i from 0 to $depth {
-
     @each $breakpoint, $break in $breakpoint-map {
       @media(min-width: $break) {
         @each $title, $style in $border-styles-map {

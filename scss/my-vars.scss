@@ -5,7 +5,15 @@
 /* Grid */
 $columns: 12;
 $items: 6;
-$breakpoint-map: ("md":768px, "lg":1024px, "xl":1440px);
+$breakpoint-map: (
+  "xs": 320px,
+  "sm": 425px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1440px,
+  "xxl": 2560px,
+  "xxxl":3440px
+);
 
 
 /* Spacing & utility generator */
@@ -14,38 +22,51 @@ $spacingUnit: 'rem';
 $spacingStep: .25;
 $numSpacingUnits: 5;
 
-$shorthand-map: ("t":"top", "b":"bottom", "r":"right", "l":"left", "x":(1:"left", 2:"right"), "y":(1:"top", 2:"bottom"));
+$shorthand-map: (
+  "t":"top",
+  "b":"bottom",
+  "r":"right",
+  "l":"left",
+  "x":(1:"left", 2:"right"),
+  "y":(1:"top", 2:"bottom"));
 $property-map: ("m":"margin", "p":"padding");
 
 /* Colors */
 $primaryColor: #258cc7;
 $accentColor: #21d593;
 $successColor: #1f921f;
-$warningColor: #c92d2d;
+$warningColor: #c98b2d;
+$dangerColor: #c92d2d;
 $gray: rgba(0, 0, 0, .2);
 $white: #e8e5e5;
 $black: #101010;
 
-$color-class-map: ("bg":"background-color", "text":"color", "b":"border-color");
+$color-class-map: (
+  "bg":"background-color",
+  "text":"color",
+  "b":"border-color"
+);
 
 $color-map: (
   "primary":$primaryColor,
   "accent":$accentColor,
   "success":$successColor,
   "warning":$warningColor,
+  "danger":$dangerColor,
   "transparent":transparent,
   "gray": $gray,
   "white": $white,
   "black": $black
 );
-$state-map: ("focus", "hover", "active");
 
+$state-map: ("focus", "hover", "active");
 
 /* Shading & borders */
 
 $depth: 21;
 $spread: 4px;
 
+/* Borders sides and styles */
 $sides: ("t":"top", "r":"right", "b":"bottom", "l":"left");
 
 $border-styles-map: (
@@ -62,22 +83,91 @@ $border-styles-map: (
 );
 
 /* Typography */
-$fontSize-map: ("sm":3, "default":4, "md":5, "lg":7, "xl":9, "xxl":12);
+$fontSize-map: (
+  "sm":3,
+  "default":4,
+  "md":5,
+  "lg":7,
+  "xl":9,
+  "xxl":12
+);
+
+$text-transform-map: (
+  "uppercase",
+  "lowercase",
+  "capitalize",
+  "normal-case"
+);
+
+$decoration-map:(
+  "underlined",
+  "overline",
+  "lineThrough",
+  "none"
+);
+
+$decoration-style-map:(
+  "wave",
+  "solid",
+  "double",
+  "dotted",
+  "dashed"
+);
+
+$text-overflow:(
+  "truncate",
+  "overflow-ellipsis",
+  "overflow-clip"
+);
+
+$text-align:(
+  "right",
+  "center",
+  "left",
+  "justify",
+);
+
+$italic: "italic";
 
 /* Show/Hide */
-$hidden-map: ("hide": "none", "display": "block");
+$hidden-map: (
+  "hide": "none",
+  "display": "block"
+);
 
 /* Opacity */
-$clarity-map: ("25": 0.25, "50": 0.50, "75": 0.75, "100": 1);
+$clarity-map: (
+  "25": 0.25,
+  "50": 0.50,
+  "75": 0.75,
+  "100": 1
+);
 
 /* Overflow */
-$overflow-map: ("visible":"visible", "hidden":"hidden", "scroll":"scroll", "auto":"auto", "none":"none");
+$overflow-map: (
+  "visible":"visible",
+  "hidden":"hidden",
+  "scroll":"scroll",
+  "auto":"auto",
+  "none":"none"
+);
 
-$overflow-direction: ("x":"x", "y":"y");
+$overflow-direction: (
+  "x":"x",
+  "y":"y"
+);
 
 /* Z-Index */
-$z-index-map: ("0":"0", "10":"10", "20":"20", "30":"30", "40":"40", "50":"50", "auto":"auto", );
+$z-index-map: (
+  "0":0,
+  "10":10,
+  "20":20,
+  "30":30,
+  "40":40,
+  "50":50,
+  "auto":"auto"
+);
 
 /* Transition */
 
-/* Background-image */
+/* Transform */

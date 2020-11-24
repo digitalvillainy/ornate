@@ -1,0 +1,32 @@
+@mixin update-decoration {
+  @each $decoration in $decoration-map {
+    @each $style in $decoration-style-map {
+      .text-decoration-#{$decoration} {
+        text-decoration: unquote($decoration)
+      }
+      .text-decoration-#{$style} {
+        text-decoration-style: unquote(#{$style});
+      }
+      @each $state in $state-map {
+        .#{$state}\:text-decoration-#{$decoration} {
+          text-decoration: unquote($decoration)
+        }
+        .#{$state}\:text-decoration-#{$style} {
+          text-decoration-style: unquote(#{$style});
+        }
+      }
+      @each $breakpoint, $break in $breakpoint-map {
+        @media(min-width: $break) {
+          .#{$breakpoint}\:text-decoration-#{$decoration} {
+            text-decoration: unquote($decoration)
+          }
+          .#{$breakpoint}\:text-decoration-#{$style} {
+            text-decoration-style: unquote(#{$style});
+          }
+        }
+      }
+    }
+  }
+}
+
+@include update-decoration;
