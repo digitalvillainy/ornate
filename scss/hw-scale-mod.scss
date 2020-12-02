@@ -1,0 +1,23 @@
+@mixin hw-scale-mod {
+  @each $hw, $scale in $height-width-scale {
+    .w-#{$hw} {
+      width: $scale;
+    }
+    .h-#{$hw} {
+      height: $scale;
+    }
+    @each $breakpoint, $value in $breakpoint-map {
+      @media(min-width: $value) {
+        .#{$breakpoint}\:w-#{$hw} {
+          width: $scale;
+        }
+        .#{$breakpoint}\:h-#{$hw} {
+          height: $scale;
+        }
+      }
+    }
+
+  }
+}
+
+@include hw-scale-mod;

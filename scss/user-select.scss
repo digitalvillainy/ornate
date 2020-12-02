@@ -1,0 +1,6 @@
+@mixin user-select{
+  @each $select in $select-map{
+    .select-#{$select}{ user-select: #{$select};}
+  }
+}
+@include user-select;

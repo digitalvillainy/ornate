@@ -1,4 +1,4 @@
-@mixin generate-responsive-color{
+@mixin generate-responsive-color {
   @each $class, $property in $color-class-map {
     @each $subclass, $value in $color-map {
       @each $breakpoint, $break in $breakpoint-map {
@@ -7,8 +7,13 @@
             #{$property}: $value
           }
         }
+        //  Dark Mode
+        .dark-mode\:#{$class}-#{$subclass} {
+          #{$property}: $value
+        }
       }
     }
   }
 }
+
 @include generate-responsive-color;

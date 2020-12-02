@@ -1,6 +1,5 @@
 // HTML5 Boilerplate css
 @import "../css/normalize.css";
-//@import "../css/main.css";
 
 // custom variables
 @import "my-vars";
@@ -40,12 +39,24 @@
 // Text Transform
 @import "text-transform";
 
+// Text Ellipsis
+@import "text-ellipsis";
+
+// User Select
+@import "user-select";
+
 // Italic
 @import "font-styles";
 
-//Cursor
+// Cursor
 @import "mouse-cursor";
 
-// compositions
+// SVG Controls
+@import "svg-ctrl";
+
+// HW scale
+@import "hw-scale-mod";
+
+// Compositions
 @import "compositions";
 

@@ -1,0 +1,10 @@
+@mixin svg-ctrl {
+  .fill-svg {
+    fill: currentColor;
+  }
+  .stroke-svg {
+    stroke: currentColor;
+  }
+}
+
+@include svg-ctrl;
