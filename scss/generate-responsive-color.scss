@@ -2,14 +2,27 @@
   @each $class, $property in $color-class-map {
     @each $subclass, $value in $color-map {
       @each $breakpoint, $break in $breakpoint-map {
-        @media(min-width: $break) {
-          .#{$breakpoint}\:#{$class}-#{$subclass} {
-            #{$property}: $value
+        @each $darkClass, $darkAlt in $dark-color-map {
+          @each $lightClass, $lightAlt in $light-color-map {
+
+            @media(min-width: $break) {
+              .#{$breakpoint}\:#{$class}-#{$subclass} {
+                #{$property}: $value
+              }
+              .#{$breakpoint}\:#{$class}-#{$darkClass} {
+                #{$property}: $darkAlt;
+              }
+              .#{$breakpoint}\:#{$class}-#{$lightClass} {
+                #{$property}: $lightAlt;
+              }
+
+            }
+            //  Dark Mode
+            .dark-mode\:#{$class}-#{$subclass} {
+              #{$property}: $value
+            }
+
           }
-        }
-        //  Dark Mode
-        .dark-mode\:#{$class}-#{$subclass} {
-          #{$property}: $value
         }
       }
     }

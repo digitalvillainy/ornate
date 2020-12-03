@@ -1,9 +1,3 @@
-//h1{
-//  @extend .text-primary, .font-xxl;
-//}
-//h2{
-//  @extend .text-accent, .font-xl;
-//}
-//.box{
-//  @extend .font-md, .p-3, .b-2-solid, .b-rounded, .raise-1-gray, .m-t-3, .m-b-3;
-//}
+@import "compositions/my-component-vars";
+@import "compositions/box";
+@import "compositions/button";

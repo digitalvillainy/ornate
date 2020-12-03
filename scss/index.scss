@@ -21,6 +21,9 @@
 // responsive-border
 @import "generate-responsive-border";
 
+// Border color mod
+@import "color-border";
+
 // Overflow
 @import "generate-overflow";
 
@@ -39,6 +42,9 @@
 // Text Transform
 @import "text-transform";
 
+// Alt Text Color
+@import "text-alt-color";
+
 // Text Ellipsis
 @import "text-ellipsis";
 
@@ -47,6 +53,8 @@
 
 // Italic
 @import "font-styles";
+
+@import "font-family";
 
 // Cursor
 @import "mouse-cursor";

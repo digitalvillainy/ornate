@@ -1,0 +1,18 @@
+/* Box */
+$box-level-map:(
+  "low" : 1,
+  "med": 2,
+  "high": 3
+);
+
+/* Button Settings */
+$button-size-map:(
+  "sm",
+  "md",
+  "lg"
+);
+
+$button-type:(
+  "rounded",
+  "fab"
+);

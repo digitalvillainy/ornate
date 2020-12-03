@@ -1,0 +1,17 @@
+@mixin box {
+    @each $subclass, $value in $color-map {
+      @each $state in $state-map {
+        @each $lvl, $qty in $box-level-map {
+          .box-#{$lvl}-#{$subclass} {
+            @extend .font-md, .p-3, .b-rounded, .raise-#{$qty}-#{$subclass}, .m-t-3, .m-b-3;
+          }
+
+          .#{$state}\:box-#{$lvl}-#{$subclass} {
+            @extend .font-md, .p-3, .b-rounded, .raise-#{$qty}-#{$subclass}, .m-t-3, .m-b-3;
+          }
+        }
+      }
+    }
+}
+
+@include box;

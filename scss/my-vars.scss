@@ -31,11 +31,21 @@ $shorthand-map: (
 $property-map: ("m":"margin", "p":"padding");
 
 /* Colors */
-$primaryColor: #303f9f;
+$primaryColor: #3F51B5;
+$lightPrimaryColor: #C5CAE9;
+$darkPrimaryColor: #303F9F;
 $accentColor: #ff5252;
+$lightAccentColor: #FFCDD2;
+$darkAccentColor: #D32F2F;
 $successColor: #4caf50;
-$warningColor: #fb8c00;
+$lightSuccessColor: #C8E6C9;
+$darkSuccessColor: #388E3C;
+$warningColor: #FF9800;
+$lightWarningColor: #FFE0B2;
+$darkWarningColor: #F57C00;
 $dangerColor: #c92d2d;
+$lightDangerColor: #f44336;
+$darkDangerColor: #b71c1c;
 $gray: rgba(0, 0, 0, .2);
 $white: #e8e5e5;
 $black: #101010;
@@ -48,14 +58,40 @@ $color-class-map: (
 
 $color-map: (
   "primary":$primaryColor,
+  "light-primary":$lightPrimaryColor,
+  "dark-primary":$darkPrimaryColor,
   "accent":$accentColor,
+  "light-accent":$lightAccentColor,
+  "dark-accent":$darkAccentColor,
   "success":$successColor,
+  "light-success":$lightSuccessColor,
+  "dark-success":$darkSuccessColor,
   "warning":$warningColor,
+  "light-warning":$lightWarningColor,
+  "dark-warning":$darkWarningColor,
   "danger":$dangerColor,
+  "light-danger":$lightDangerColor,
+  "dark-danger":$darkDangerColor,
   "transparent":transparent,
   "gray": $gray,
   "white": $white,
   "black": $black
+);
+
+$light-color-map:(
+  "light-primary":$lightPrimaryColor,
+  "light-accent":$lightAccentColor,
+  "light-success":$lightSuccessColor,
+  "light-warning":$lightWarningColor,
+  "light-danger":$lightDangerColor,
+);
+
+$dark-color-map:(
+  "dark-primary":$darkPrimaryColor,
+  "dark-accent":$darkAccentColor,
+  "dark-success":$darkSuccessColor,
+  "dark-warning":$darkWarningColor,
+  "dark-danger":$darkDangerColor,
 );
 
 $state-map: ("focus", "hover", "active");
@@ -174,13 +210,13 @@ $z-index-map: (
 
 /* Cursor */
 $mouse-cursor: (
-  "cursor-auto"
-  "cursor-default"
-  "cursor-pointer"
-  "cursor-wait"
-  "cursor-text"
-  "cursor-move"
-  "cursor-not-allowed"
+  "cursor-auto": "auto",
+  "cursor-default": "default",
+  "cursor-pointer": "pointer",
+  "cursor-wait": "wait",
+  "cursor-text": "text",
+  "cursor-move": "move",
+  "cursor-not-allowed": "not-allowed"
 );
 
 /* User Select */

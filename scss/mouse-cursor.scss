@@ -1,6 +1,6 @@
 @mixin mouse-cursor{
-  @each $cursor in $mouse-cursor{
-    .#{$cursor}{ cursor: #{$cursor}; }
+  @each $cursor, $mode in $mouse-cursor{
+    .#{$cursor}{ cursor: #{$mode}; }
   }
 }
 @include mouse-cursor;

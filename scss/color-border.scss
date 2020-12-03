@@ -1,0 +1,33 @@
+@mixin color-border {
+  @each $breakpoint, $break in $breakpoint-map {
+    @each $darkClass, $darkAlt in $dark-color-map {
+      @each $lightClass, $lightAlt in $light-color-map {
+        @each $state in $state-map {
+
+          .b-#{$darkClass} {
+            border-color: #{$darkAlt};
+          }
+          .b-#{$lightClass} {
+            border-color: #{$lightAlt};
+          }
+          @media(min-width: $break) {
+            .#{$breakpoint}\:b-#{$darkClass} {
+              border-color: #{$darkAlt};
+            }
+            .#{$breakpoint}\:b-#{$lightClass} {
+              border-color: #{$lightAlt};
+            }
+          }
+          .#{$state}\::b-#{$darkClass} {
+            border-color: #{$darkAlt};
+          }
+          .#{$state}\::b-#{$lightClass} {
+            border-color: #{$lightAlt};
+          }
+        }
+      }
+    }
+  }
+}
+
+@include color-border;

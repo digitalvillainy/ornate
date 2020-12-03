@@ -1,0 +1,15 @@
+@mixin text-alt-color {
+  @each $darkClass, $darkAlt in $dark-color-map {
+    @each $lightClass, $lightAlt in $light-color-map {
+      .text-#{$darkClass}{
+        color: #{$darkAlt};
+      }
+      .text-#{$lightClass}{
+        color: #{$lightAlt};
+      }
+
+    }
+  }
+}
+
+@include text-alt-color;
