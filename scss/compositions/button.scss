@@ -1,3 +1,5 @@
+@import "color-utils";
+
 @mixin button {
   @each $size in $button-size-map {
     @each $type in $button-type {
@@ -5,32 +7,42 @@
         @each $state in $state-map {
           @each $breakpoint, $break in $breakpoint-map {
             .btn {
-              @extend .b-rounded, .font-md, .b-gray, .b-1-solid, .text-black, .uppercase, .m-2,
+              @extend .b-rounded, .font-md, .b-gray, .b-1-solid, .uppercase, .m-2,
               .cursor-pointer, .font-sans, .font-strong;
             }
             .btn-line-#{$subclass} {
-              @extend .b-rounded, .font-md, .b-#{$subclass}, .b-1-solid, .text-#{$subclass}, .uppercase, .m-2,
-              .cursor-pointer, .font-sans, .font-strong;
-              color: findDark($subclass);
+              @extend .b-rounded, .font-md, .b-1-solid, .uppercase, .m-2,
+              .cursor-pointer, .font-sans, .font-strong, .b-#{$subclass}, .text-#{$subclass},
+              .hover\:b-2-solid, .hover\:b-#{$subclass}, .hover\:bg-#{findDark($subclass)}, .hover\:text-#{setText($subclass)};
             }
             .btn-#{$subclass} {
-              @extend .b-rounded, .font-md, .b-2-solid, .b-#{findDark($subclass)},
-              .uppercase, .m-2, .cursor-pointer, .bg-#{$subclass}, .font-sans, .font-strong;
-              color: findDark($subclass);
+              @extend .b-rounded, .font-md, .b-2-solid, .text-#{setText($subclass)}, .b-#{findDark($subclass)},
+              .uppercase, .m-2, .cursor-pointer, .bg-#{$subclass}, .font-sans, .font-strong,
+              .hover\:bg-#{findDark($subclass)}, .hover\:text-#{$subclass}, .hover\:b-#{$subclass};
             }
-            .#{$state}\:btn {
-              @extend .b-rounded, .font-md, .b-gray, .b-1-solid, .uppercase, .m-2,
-              .cursor-pointer, .font-sans, .font-strong;
-              color: findDark($subclass);
+            .btn-fab{
+              border-radius: 50%;
+              @extend .b-gray, .w-10, .h-10, .b-1-solid, .raise-1-gray, .hover\:raise-2-gray, .hover\:b-2-solid;
             }
-            .#{$state}\:btn-line-#{$subclass} {
-              @extend .b-rounded, .font-md, .b-#{$subclass}, .b-1-solid, .text-#{$subclass}, .uppercase, .m-2,
-              .cursor-pointer, .font-sans, .font-strong;
-              color: findDark($subclass);
+            .btn-fab-#{$subclass}{
+              border-radius: 50%;
+              @extend  .m-3, .w-10, .h-10, .b-1-solid, .raise-1-gray, .hover\:raise-2-gray, .hover\:b-2-solid,
+              .bg-#{$subclass}, .hover\:bg-#{findDark($subclass)}, .b-#{$subclass}, .hover\:b-#{$subclass};
             }
-            .#{$state}\:btn-#{$subclass} {
-              @extend .b-rounded, .font-md, .b-2-solid, .b-#{findDark($subclass)}, .text-white,
-              .uppercase, .m-2, .cursor-pointer, .bg-#{$subclass}, .font-sans, .font-strong;
+            .btn-round {
+              border-radius: 16px;
+              @extend .text-black, .bg-white, .b-1-solid, .b-gray, .uppercase, .font-sans, .font-strong;
+            }
+            .btn-round-line-#{$subclass}{
+              border-radius: 16px;
+              @extend .text-#{$subclass}, .bg-white, .hover\:bg-#{findDark($subclass)}, .b-1-solid, .b-#{findDark($subclass)},
+              .hover\:b-#{$subclass}, .uppercase, .font-sans, .font-strong, .hover\:text-#{setText($subclass)};
+            }
+            .btn-round-#{$subclass}{
+              border-radius: 16px;
+              @extend .text-#{setText($subclass)}, .bg-#{$subclass}, .hover\:bg-#{findDark($subclass)}, .b-1-solid,
+              .b-#{findDark($subclass)}, .hover\:b-#{$subclass}, .uppercase, .font-sans, .font-strong,
+              .hover\:text-#{setText($subclass)};
             }
 
           }
@@ -38,32 +50,6 @@
       }
     }
   }
-}
-
-@function findDark($string) {
-  $map: findColorMap($string);
-  $find: map-has-key($map, $string);
-  @if $find {
-    @each $darkClass, $darkAlt in $dark-color-map {
-      @each $lightClass, $lightAlt in $light-color-map {
-        $lightKey: str-slice($string, 7);
-        $darkKey: str-slice($string, 6);
-        @if map-has-key($light-color-map, $string) {
-          @return "dark-" + $lightKey;
-        } @else if map-has-key($dark-color-map, $string){
-          @return "light-" + $darkKey;
-        }
-      }
-    }
-  }
-  @return $string;
-}
-
-@function findColorMap($string) {
-  @if map-has-key($light-color-map, $string) {
-    @return $light-color-map;
-  }
-  @return $dark-color-map;
 }
 
 @include button;

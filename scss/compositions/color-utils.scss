@@ -1,0 +1,42 @@
+@function findDark($string) {
+  $map: findColorMap($string);
+  $find: map-has-key($map, $string);
+  @if $find {
+    @each $darkClass, $darkAlt in $dark-color-map {
+      @each $lightClass, $lightAlt in $light-color-map {
+        $lightKey: str-slice($string, 7);
+        $darkKey: str-slice($string, 6);
+        @if map-has-key($light-color-map, $string) {
+          @return "dark-" + $lightKey;
+        } @else if map-has-key($dark-color-map, $string) {
+          @return "light-" + $darkKey;
+        }
+      }
+    }
+  }
+  @return $string;
+}
+
+@function setText($string) {
+  $all-color-alt: map-merge($dark-color-map, $light-color-map);
+  $lightKey: str-slice($string, 7);
+  $darkKey: str-slice($string, 6);
+  @if map-has-key($all-color-alt, $string) {
+    @if map-has-key($dark-color-map, $string) {
+      @return "light-" + $darkKey;
+    }
+    @if map-has-key($light-color-map, $string) {
+      @return "dark-" + $lightKey;
+    }
+  } @else {
+    @return "white"
+  }
+  @return $string;
+}
+
+@function findColorMap($string) {
+  @if map-has-key($light-color-map, $string) {
+    @return $light-color-map;
+  }
+  @return $dark-color-map;
+}

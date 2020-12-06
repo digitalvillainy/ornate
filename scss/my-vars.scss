@@ -78,7 +78,7 @@ $color-map: (
   "black": $black
 );
 
-$light-color-map:(
+$light-color-map: (
   "light-primary":$lightPrimaryColor,
   "light-accent":$lightAccentColor,
   "light-success":$lightSuccessColor,
@@ -86,7 +86,7 @@ $light-color-map:(
   "light-danger":$lightDangerColor,
 );
 
-$dark-color-map:(
+$dark-color-map: (
   "dark-primary":$darkPrimaryColor,
   "dark-accent":$darkAccentColor,
   "dark-success":$darkSuccessColor,
@@ -139,14 +139,14 @@ $text-transform-map: (
   "normal-case"
 );
 
-$decoration-map:(
+$decoration-map: (
   "underlined",
   "overline",
   "lineThrough",
   "none"
 );
 
-$decoration-style-map:(
+$decoration-style-map: (
   "wave",
   "solid",
   "double",
@@ -154,13 +154,13 @@ $decoration-style-map:(
   "dashed"
 );
 
-$text-overflow:(
+$text-overflow: (
   "truncate",
   "overflow-ellipsis",
   "overflow-clip"
 );
 
-$text-align:(
+$text-align: (
   "right",
   "center",
   "left",
@@ -221,14 +221,11 @@ $mouse-cursor: (
 
 /* User Select */
 $select-map: (
-  "none"
-  "text"
-  "all"
-  "auto"
+  "none" "text" "all" "auto"
 );
 
 /* Spacing mod */
-$height-width-scale:(
+$height-width-scale: (
   0: 0px,
   1: 0.25rem,
   2: 0.5rem,

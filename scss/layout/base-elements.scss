@@ -1,0 +1,18 @@
+html {
+  @extend .h-100p;
+  body {
+    min-height: 100%;
+    margin: 0;
+    @extend .grid, .bg-success;
+    grid-template-rows: 1fr auto;
+
+    .content-wrapper {
+      @extend .place-x-center, .w-75p;
+    }
+
+    .footer {
+      @extend .bg-accent;
+    }
+  }
+}
+

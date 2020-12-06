@@ -1,0 +1,7 @@
+@mixin input-forms{
+  // TODO: Finish styling for inputs and forms
+  .input {
+    @extend .b-rounded, .b-b-2-solid, .b-primary;
+  }
+}
+@include input-forms;
