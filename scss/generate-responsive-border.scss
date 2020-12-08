@@ -47,6 +47,15 @@
           }
         }
       }
+
+      @each $name, $side in $sides {
+        .b-#{$name}-none{
+          border-#{$side}: none;
+        }
+      }
+      .b-none{
+        border: none;
+      }
     }
   }
 }

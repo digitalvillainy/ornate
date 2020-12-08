@@ -1,7 +1,86 @@
-@mixin input-forms{
-  // TODO: Finish styling for inputs and forms
+@import "color-utils";
+
+@mixin input-forms {
+  /* Label */
+  .label {
+    @extend .font-strong, .font-sans;
+  }
+
+  /* Input */
   .input {
-    @extend .b-rounded, .b-b-2-solid, .b-primary;
+    @extend .b-rounded, .b-b-1-solid, .b-gray, .bg-gray, .opacity-75, .b-l-none, .b-r-none, .b-t-none,
+    .focus\:b-b-2-solid, .focus\:b-black, .bg-white, .font-sans, .m-y-2, .p-t-2,
+    .focus\:raise-1-gray, .p-x-1;
+  }
+
+  .input-rounded {
+    border-radius: 16px;
+    @extend .b-b-1-solid, .b-gray, .bg-gray, .opacity-75, .b-l-none, .b-r-none, .b-t-none,
+    .focus\:b-b-2-solid, .focus\:b-black, .bg-white, .font-sans, .m-y-2, .p-t-2,
+    .focus\:raise-1-gray, .p-x-2;
+  }
+
+  @each $subclass, $value in $color-map {
+    .input-#{$subclass} {
+      @extend .b-rounded, .b-b-1-solid, .b-#{$subclass}, .text-#{findDark($subclass)}, .bg-gray,
+      .opacity-75, .focus\:b-b-2-solid, .focus\:b-#{findDark($subclass)}, .bg-white,
+      .font-sans, .m-y-2, .p-t-2, .b-l-none, .b-r-none, .b-t-none, .focus\:raise-1-gray, .p-x-2;
+    }
+
+    .input-rounded-#{$subclass} {
+      border-radius: 16px;
+      @extend .b-b-1-solid, .b-#{$subclass}, .text-#{findDark($subclass)}, .bg-gray,
+      .opacity-75, .focus\:b-b-2-solid, .focus\:b-#{findDark($subclass)}, .bg-white,
+      .font-sans, .m-y-2, .p-t-2, .b-l-none, .b-r-none, .b-t-none, .focus\:raise-1-gray, .p-x-2;
+    }
+
+    input:disabled,
+    textarea:read-only {
+      @extend .cursor-not-allowed, .opacity-100, .bg-gray;
+    }
+
+    input:read-only,
+    textarea:read-only {
+      @extend .cursor-text, .opacity-100, .bg-gray;
+    }
+
+    // Text area
+    .textarea {
+      @extend .focus\:raise-1-gray, .b-1-solid, .b-gray, .b-rounded;
+    }
+
+    .textarea-#{$subclass} {
+      @extend .focus\:raise-1-#{setText($subclass)}, .b-1-solid, .b-#{$subclass}, .b-rounded;
+    }
+
+    // Drop-down/ Select
+    .select {
+      @extend .bg-white, .font-sans, .b-rounded;
+
+      option:nth-child(2n+1) {
+        @extend .bg-white, .opacity-50;
+      }
+    }
+
+    .select-alt {
+      @extend .b-white, .b-1-solid, .opacity-75, .font-sans, .b-rounded;
+    }
+
+    .select-#{$subclass} {
+      @extend .b-#{findDark($subclass)}, .font-sans, .b-rounded, .text-black, .bg-white;
+    }
+
+    .select-alt-#{$subclass} {
+      @if map-has-key($dark-color-map, $subclass) {
+        @extend .text-white;
+      }
+      @extend .bg-#{$subclass}, .font-sans, .b-rounded, .text-white;
+
+      option:nth-child(2n+1) {
+        @extend .bg-#{findDark($subclass)}, .text-#{$subclass};
+      }
+    }
   }
 }
+
 @include input-forms;
