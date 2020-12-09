@@ -1,6 +1,6 @@
 {
-  "name": "OrnateCSS",
-  "version": "1.0.0",
+  "name": "ornate_css",
+  "version": "0.1.0",
   "description": "Highly inspired by other frameworks like Tailwind css, and Bulma Ornate CSS allows developers and designers to\naccomplish complicated web designs while you're writing your HTML. Whether you want to design using Ornate CSS'\nout-of-the-box solutions, or expand the utilities to fit your projects, Ornate empowers your decision while remaining\nlight and non-invasive.",
   "keywords": [
     "CSS",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "gaudiamus-css": "^1.2.1",
-    "node-forge": "^0.10.0"
+    "node-forge": "^0.10.0",
+    "ornate": "0.0.3"
   }
 }
