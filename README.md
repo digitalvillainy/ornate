@@ -1,31 +1,24 @@
-# Gaudiamus css starter
+# Ornate CSS
 
-![starter](img/gaudiamus-starter.png)
+**May your code be simple, and your designs be Ornate.**
 
-## Installation
+## Utility powered, mobile responsive, grid based CSS framework.
 
-1. clone or fork
+Highly inspired by other frameworks like Tailwind css, and Bulma Ornate CSS allows developers and designers to
+accomplish complicated web designs while you're writing your HTML. Whether you want to design using Ornate CSS'
+out-of-the-box solutions, or expand the utilities to fit your projects, Ornate empowers your decision while remaining
+light and non-invasive.
 
-    `git clone https://github.com/gaudiamus-css/gaudiamus-starter.git`
-2. install dependencies
+To read the full documentation please review the official [Ornate](https://www.ornatecss.com) Website.
 
-    `npm install`
-3. run parcel
+- [Installation](#installation)
 
-    `npm run dev`
+- [Basic Usage](#basicUsage)
 
-## Documentation
+- [Donate](#donate)
 
-The Gaudiamus implementation should be pretty self-explanatory when looking at the folder ***/scss***.
-To learn more about Gaudiamus CSS, visit [gaudiamus-css.github.io](https://gaudiamus-css.github.io/).
-
-## Build something beautiful
-
-You built a template that screams "share me"? Be sure to create an issue on this repo reporting the location:
-we'd love to promote your creation.
+### <a name="installation"></a> Installation
 
 
-### About HTML5 Boilerplate
-
-I am not in any way associated with HTML5 Boilerplate. Like millions of other developers,
-I use it for pure HTML projects. Check them out at [HTML5 Boilerplate](https://html5boilerplate.com/)
+### <a name="basicUsage"></a> Basic Usage
+### <a name="donate"></a> Donate
