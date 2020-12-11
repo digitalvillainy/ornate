@@ -134,6 +134,9 @@ make the difference. Finally, you will have an overview of your breakpoints. Sta
 </div>
 ```
 
+Responsiveness in Ornate allows you to adhoc allow different pre-built classes to be active at different
+breakpoints.
+
 ##Pre-Built Utility Classes
 There are two types of Utilities:
 1. Dashed utilities
@@ -169,6 +172,8 @@ $property-map: ("m":"margin", "p":"padding");
 ```
 
 ###Colors:
+Colors can be added to a background, borders or text.
+
 ```scss
 /* Colors */
 $primaryColor: #3F51B5;
@@ -255,6 +260,7 @@ $z-index-map: (
 
 ****
 ###Typography
+
 **Font Family**
 ```scss
 // font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -277,29 +283,208 @@ $z-index-map: (
 .font-xxl
 ```
 
-###Spacing
-Documentation TBD
+**Text Transformation, Decorations, Overflow, Align**
+```scss
+
+// Transformations
+.uppercase
+.lowercase
+.capitalize
+.normal-case
+
+//Decorations
+.underlined
+.overline
+.lineThrough
+.none
+
+//Overflow
+.overflow
+.text-overflow
+.overflow-clip
+.text-decoration-none
+
+//Align
+.text-right
+.text-center
+.text-left
+.text-justify
+```
+
+****
+**Padding**
+```scss
+.p-1
+.p-2
+.p-3
+.p-4
+.p-5
+
+.p-x-1
+.p-t-2
+.p-r-3
+.p-b-4
+.p-l-5
+
+.p-y-1
+.p-t-2
+.p-r-3
+.p-b-4
+.p-l-5
+
+```
+**Margin**
+```scss
+.m-1
+.m-2
+.m-3
+.m-4
+.m-5
+
+.m-x-1
+.m-t-2
+.m-r-3
+.m-b-4
+.m-l-5
+
+.m-t-1
+.m-r-2
+.m-b-3
+.m-l-4
+
+```
+
+****
 
 ###Sizing
-Documentation TBD
+Sizing comes in two flavors:
+1. Percentage
+```scss
+.w-25p
+```
 
+2. REM unit
+```scss
+.h //height
+.w //width
 
-###Backgrounds
-Documentation TBD
+//example
+.h-10
 
+$height-width-scale: (
+  0: 0px,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  7: 1.75rem,
+  8: 2rem,
+  9: 2.25rem,
+  10: 2.5rem,
+  11: 2.75rem,
+  12: 3rem,
+  14: 3.5rem,
+  16: 4rem,
+  20: 5rem,
+  24: 6rem,
+  28: 7rem,
+  32: 8rem,
+  36: 9rem,
+  40: 10rem,
+  44: 11rem,
+  48: 12rem,
+  52: 13rem,
+  56: 14rem,
+  60: 15rem,
+  64: 16rem,
+  72: 18rem,
+  80: 20rem,
+  96: 24rem,
+  auto: auto
+);
+```
 
+****
 ###Borders
-Documentation TBD
+```scss
+// rounds the corners of a border
+.b-rounded
 
+// border - px line width - border style
+.b-1-solid // Outputs border with a solid 1px width
 
+// You can even determine what border sides
+.b-b-1-solid // Outputs border with a solid 1px width that is on the bottom
+
+// In order to color a border you can simply use the following syntax
+// with any color:
+.b-black
+```
+
+**Border Decorations**
+```scss
+.b-1-wave
+.b-1-solid
+.b-1-double
+.b-1-dotted
+.b-1-dashed
+```
+
+****
 ###Effects
+**Shadowing**
+```scss
+.raise-1-[[color]]
+.raise-2-black
+.raise-3-primary
+```
 
-Documentation TBD
+**Opacity**
+```scss
+.opacity-25 // 0.25
+.opacity-50 // 0.50
+.opacity-75 // 0.75
+.opacity-100 // 1
+```
+**Cursor**
+```scss
+.cursor-auto
+.cursor-default
+.cursor-pointer
+.cursor-wait
+.cursor-text
+.cursor-move
+.cursor-not-allowed
+```
 
+**User-select**
+```scss
+.select-none
+.select-text
+.select-all
+.select-auto
+```
+
+****
 ###SVG
-Documentation TBD
+Much like Tailwind you can style svg's that primarily use path as it's main attribute.
+I suggest using [zondicons](http://www.zondicons.com/)
 
+```scss
+  .fill-svg {
+    fill: currentColor;
+  }
+  .stroke-svg {
+    stroke: currentColor;
+  }
 
+// TO color  after using either fill-svg or stroke-svg use text coloring
+.fill-svg .text-primary
+```
+
+****
 ##Compositions
 Documentation TBD
 
