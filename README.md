@@ -4,12 +4,14 @@
 
 ## Utility powered, mobile responsive, grid based CSS framework.
 
-Highly inspired by other frameworks like Tailwind css, and Bulma Ornate CSS and built using Gaudiamus allows developers
-and designers to accomplish complicated web designs while you're writing your HTML. Whether you want to design using
-Ornate CSS' out-of-the-box solutions, or expand the utilities to fit your projects, Ornate empowers your decision while
-remaining light and non-invasive.
+Highly inspired by other frameworks like Tailwind css, and Bulma Ornate CSS and built using
+[Gaudiamus](https://gaudiamus-css.github.io/) allows developers and designers to accomplish complicated web designs
+while you're writing your HTML. Whether you want to design using Ornate CSS' out-of-the-box solutions, or expand the
+utilities to fit your projects, Ornate empowers your decision while remaining light and non-invasive.
 
-- [Installation](#installation)
+[Installation](#installation)
+
+[Basic Usage](#basicUsage)
 
 ### <a name="installation"></a> Installation
 
@@ -25,6 +27,280 @@ Include "ornate_css/scss/index.scss" into your own .sass or .scss file.
 //import Ornate css
 
 @import "./node_modules/ornate_css/scss/index.scss
-
-// Create your own compositions after importing.
 ```
+
+Built directly into OrnateCSS is [normalize.css](https://necolas.github.io/normalize.css/), a css file that
+essentially resets a browsers default styling and forces uniformity for reliable consistency
+when styling your site.
+
+Normalize is definitely the recommended css reset of its kind. Regardless, use whatever you like as long as you have
+a reset of some sort.
+
+Ornate has a plethora of utility classes. The majority of which follow this simple formula for ease of memorization:
+
+```scss
+.{{name of property}}-{{side}}-{{unit number}}
+
+// Example
+// border - bottom - 1px - solid
+.b-b-1-solid
+
+// margin - top - 1em
+.m-t-1
+
+// margin - top & bottom - 1em
+.m-y-1
+```
+
+As you see you can see, when setting properties you can choose to set a side or not.
+
+```scss
+// Affect the entire border
+// border - 1px - solid
+.b-1-solid
+
+// margin - 3em
+.m-3
+
+// Y axis e.g.: top and bottom
+.m-y-2
+
+// X axis e.g.: left and right
+.m-x-2
+
+```
+
+One can even review the above and notice a pattern when wit comes to declaring properties. Knowing that
+"m" stands for margin, you can then assume tha "p" stands for padding.
+
+###The Grid System
+Being powered by [Gaudiamus](https://gaudiamus-css.github.io/), Ornate also uses CSS Grid.
+The grid system is now easier to implement.
+
+By default, we use the common 12-grid.
+
+```html
+<div class="grid-4-4-4">
+  <div>child1</div>
+  <div>child2</div>
+  <div>child3</div>
+</div>
+```
+
+Any Combination is possible:
+
+```html
+<div class="grid-7-5">
+    <div>
+        <div class="grid-6-6">
+            <div>one-1</div>
+            <div>one-2</div>
+        </div>
+    </div>
+  <div>two</div>
+</div>
+```
+
+###Placement
+You can place elements on the x and y-axis of the grid-area with ease:
+```html
+<div class="grid-3-3-3-3">
+  <span class="place-x-center">1</span>
+  <span class="place-x-end">2</span>
+  <span class="place-y-start">3</span>
+  <span class="place-y-stretch">4</span>
+</div>
+
+```
+###Responsiveness
+What about breakpoints? We use a markup similar to tailwind css to tackle this. However, now the grid really starts to
+make the difference. Finally, you will have an overview of your breakpoints. Start with mobile and go up:
+(here is makes sense to play around with your window-size if you can)
+
+"xs": 320px,
+"sm": 425px,
+"md": 768px,
+"lg": 1024px,
+"xl": 1440px,
+"xxl": 2560px,
+"xxxl":3440px
+
+```html
+<div class="grid-12 md:grid-6-6 lg:grid-3-3-3-3">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+```
+
+##Pre-Built Utility Classes
+There are two types of Utilities:
+1. Dashed utilities
+
+   The most common and typically in the following format: **.m-t-2**
+2. Colon Utilities
+
+   Represent a condition that is met before being used. An example of this would be
+responsive utilities: "xs:", "sm:", "md:", "lg:", "xl:", "xxl:", "xxxl:"
+
+   Meanwhile, the others represent a specific state. Such as focus, hover, and active.
+
+In addition, there are default values that help support all the utilities.
+
+```scss
+$baseSpacing 20px
+
+$spacingUnit rem
+
+$spacingStep .25
+
+$numSpacingUnits 5
+
+$shorthand-map: (
+"t":"top",
+"b":"bottom",
+"r":"right",
+"l":"left",
+"x":(1:"left", 2:"right"),
+"y":(1:"top", 2:"bottom"));
+
+$property-map: ("m":"margin", "p":"padding");
+```
+
+###Colors:
+```scss
+/* Colors */
+$primaryColor: #3F51B5;
+$accentColor: #ff5252;
+$successColor: #4caf50;
+$warningColor: #FF9800;
+$dangerColor: #c92d2d;
+$gray: rgba(0, 0, 0, .2);
+$white: #e8e5e5;
+$black: #101010;
+
+/* Light version */
+$lightPrimaryColor: #C5CAE9;
+$lightAccentColor: #FFCDD2;
+$lightSuccessColor: #C8E6C9;
+$lightWarningColor: #FFE0B2;
+$lightDangerColor: #f44336;
+
+/* Dark version */
+$darkPrimaryColor: #303F9F;
+$darkAccentColor: #D32F2F;
+$darkSuccessColor: #388E3C;
+$darkWarningColor: #F57C00;
+$darkDangerColor: #b71c1c;
+
+```
+##Dashed Utilities
+
+###Layout
+**Container**
+
+Container sets an element for setting the width to 100% and centering.
+
+```scss
+.container{
+  max-width: calc(100% - 20px);
+  margin: $baseSpacing auto;
+}
+```
+
+****
+
+**Position**
+```scss
+.position-relative
+.position-absolute
+.position-fixed
+```
+****
+
+**Visibility**
+
+```scss
+// Display: none
+.hide
+
+// Display: block
+.display
+```
+
+****
+**z-index**
+
+```scss
+/* Z-Index */
+$z-index-map: (
+  "0":0,
+  "10":10,
+  "20":20,
+  "30":30,
+  "40":40,
+  "50":50,
+  "auto":"auto"
+);
+
+.z-0
+.z-10
+.z-20
+.z-30
+.z-40
+.z-50
+.z-auto
+```
+
+****
+###Typography
+**Font Family**
+```scss
+// font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.font-sans
+
+// font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+.font-serif
+
+// font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+.font-mono
+```
+
+**Font Size**
+```scss
+.font-sm
+.font-default
+.font-md
+.font-lg
+.font-xl
+.font-xxl
+```
+
+###Spacing
+Documentation TBD
+
+###Sizing
+Documentation TBD
+
+
+###Backgrounds
+Documentation TBD
+
+
+###Borders
+Documentation TBD
+
+
+###Effects
+
+Documentation TBD
+
+###SVG
+Documentation TBD
+
+
+##Compositions
+Documentation TBD
+
+
