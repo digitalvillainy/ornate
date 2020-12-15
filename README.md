@@ -645,3 +645,8 @@ Label styling is very simple.
   // select - alt - primary
   .select-alt-primary
 ```
+
+# Thank you!
+
+Thank you for using Ornate CSS, if you have problems or would like to contribute
+please reach out through email rrivera@redbannermedia.com
