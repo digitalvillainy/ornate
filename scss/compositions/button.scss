@@ -1,5 +1,4 @@
 @import "color-utils";
-
 @mixin button {
   @each $size in $button-size-map {
     @each $type in $button-type {
@@ -7,13 +6,14 @@
         @each $state in $state-map {
           @each $breakpoint, $break in $breakpoint-map {
             .btn {
-              @extend .b-rounded, .font-md, .b-gray, .b-1-solid, .uppercase, .m-2,
-              .cursor-pointer, .font-sans, .font-strong;
+              @extend .b-rounded, .font-md, .b-gray, .b-1-solid, .uppercase, .m-2, .cursor-pointer, .font-sans,
+              .font-strong;
             }
             .btn-line-#{$subclass} {
               @extend .b-rounded, .font-md, .b-1-solid, .uppercase, .m-2,
               .cursor-pointer, .font-sans, .font-strong, .b-#{$subclass}, .text-#{$subclass},
-              .hover\:b-2-solid, .hover\:b-#{$subclass}, .hover\:bg-#{findDark($subclass)}, .hover\:text-#{setText($subclass)};
+              .hover\:b-2-solid, .hover\:b-#{$subclass}, .hover\:bg-#{findDark($subclass)},
+              .hover\:text-#{setText($subclass)};
             }
             .btn-#{$subclass} {
               @extend .b-rounded, .font-md, .b-2-solid, .text-#{setText($subclass)}, .b-#{findDark($subclass)},

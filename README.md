@@ -29,26 +29,24 @@ Include "ornate_css/scss/index.scss" into your own .sass or .scss file.
 @import "./node_modules/ornate_css/scss/index.scss
 ```
 
-Built directly into OrnateCSS is [normalize.css](https://necolas.github.io/normalize.css/), a css file that
-essentially resets a browsers default styling and forces uniformity for reliable consistency
-when styling your site.
+Built directly into OrnateCSS is [normalize.css](https://necolas.github.io/normalize.css/), a css file that essentially
+resets a browsers default styling and forces uniformity for reliable consistency when styling your site.
 
-Normalize is definitely the recommended css reset of its kind. Regardless, use whatever you like as long as you have
-a reset of some sort.
+Normalize is definitely the recommended css reset of its kind. Regardless, use whatever you like as long as you have a
+reset of some sort.
 
 Ornate has a plethora of utility classes. The majority of which follow this simple formula for ease of memorization:
 
 ```scss
-.{{name of property}}-{{side}}-{{unit number}}
+//name of property - side -unit number
+
 
 // Example
 // border - bottom - 1px - solid
 .b-b-1-solid
-
-// margin - top - 1em
+  // margin - top - 1em
 .m-t-1
-
-// margin - top & bottom - 1em
+  // margin - top & bottom - 1em
 .m-y-1
 ```
 
@@ -58,14 +56,11 @@ As you see you can see, when setting properties you can choose to set a side or 
 // Affect the entire border
 // border - 1px - solid
 .b-1-solid
-
-// margin - 3em
+  // margin - 3em
 .m-3
-
-// Y axis e.g.: top and bottom
+  // Y axis e.g.: top and bottom
 .m-y-2
-
-// X axis e.g.: left and right
+  // X axis e.g.: left and right
 .m-x-2
 
 ```
@@ -73,13 +68,15 @@ As you see you can see, when setting properties you can choose to set a side or 
 One can even review the above and notice a pattern when wit comes to declaring properties. Knowing that
 "m" stands for margin, you can then assume tha "p" stands for padding.
 
-###The Grid System
-Being powered by [Gaudiamus](https://gaudiamus-css.github.io/), Ornate also uses CSS Grid.
-The grid system is now easier to implement.
+### The Grid System
+
+Being powered by [Gaudiamus](https://gaudiamus-css.github.io/), Ornate also uses CSS Grid. The grid system is now easier
+to implement.
 
 By default, we use the common 12-grid.
 
 ```html
+
 <div class="grid-4-4-4">
   <div>child1</div>
   <div>child2</div>
@@ -90,20 +87,24 @@ By default, we use the common 12-grid.
 Any Combination is possible:
 
 ```html
+
 <div class="grid-7-5">
-    <div>
-        <div class="grid-6-6">
-            <div>one-1</div>
-            <div>one-2</div>
-        </div>
+  <div>
+    <div class="grid-6-6">
+      <div>one-1</div>
+      <div>one-2</div>
     </div>
+  </div>
   <div>two</div>
 </div>
 ```
 
-###Placement
+### Placement
+
 You can place elements on the x and y-axis of the grid-area with ease:
+
 ```html
+
 <div class="grid-3-3-3-3">
   <span class="place-x-center">1</span>
   <span class="place-x-end">2</span>
@@ -112,7 +113,9 @@ You can place elements on the x and y-axis of the grid-area with ease:
 </div>
 
 ```
-###Responsiveness
+
+### Responsiveness
+
 What about breakpoints? We use a markup similar to tailwind css to tackle this. However, now the grid really starts to
 make the difference. Finally, you will have an overview of your breakpoints. Start with mobile and go up:
 (here is makes sense to play around with your window-size if you can)
@@ -126,6 +129,7 @@ make the difference. Finally, you will have an overview of your breakpoints. Sta
 "xxxl":3440px
 
 ```html
+
 <div class="grid-12 md:grid-6-6 lg:grid-3-3-3-3">
   <div>1</div>
   <div>2</div>
@@ -134,44 +138,47 @@ make the difference. Finally, you will have an overview of your breakpoints. Sta
 </div>
 ```
 
-Responsiveness in Ornate allows you to adhoc allow different pre-built classes to be active at different
-breakpoints.
+Responsiveness in Ornate allows you to adhoc allow different pre-built classes to be active at different breakpoints.
 
-##Pre-Built Utility Classes
+## Pre-Built Utility Classes
+
 There are two types of Utilities:
+
 1. Dashed utilities
 
    The most common and typically in the following format: **.m-t-2**
 2. Colon Utilities
 
-   Represent a condition that is met before being used. An example of this would be
-responsive utilities: "xs:", "sm:", "md:", "lg:", "xl:", "xxl:", "xxxl:"
+   Represent a condition that is met before being used. An example of this would be responsive utilities: "xs:", "sm:"
+   , "md:", "lg:", "xl:", "xxl:", "xxxl:"
 
    Meanwhile, the others represent a specific state. Such as focus, hover, and active.
 
 In addition, there are default values that help support all the utilities.
 
 ```scss
-$baseSpacing 20px
+$baseSpacing20
+px
 
-$spacingUnit rem
+$spacingUnitrem
 
-$spacingStep .25
+$spacingStep.25
 
-$numSpacingUnits 5
+$numSpacingUnits5
 
 $shorthand-map: (
-"t":"top",
-"b":"bottom",
-"r":"right",
-"l":"left",
-"x":(1:"left", 2:"right"),
-"y":(1:"top", 2:"bottom"));
+  "t":"top",
+  "b":"bottom",
+  "r":"right",
+  "l":"left",
+  "x":(1:"left", 2:"right"),
+  "y":(1:"top", 2:"bottom"));
 
 $property-map: ("m":"margin", "p":"padding");
 ```
 
-###Colors:
+### Colors:
+
 Colors can be added to a background, borders or text.
 
 ```scss
@@ -200,15 +207,17 @@ $darkWarningColor: #F57C00;
 $darkDangerColor: #b71c1c;
 
 ```
-##Dashed Utilities
 
-###Layout
+## Dashed Utilities
+
+### Layout
+
 **Container**
 
 Container sets an element for setting the width to 100% and centering.
 
 ```scss
-.container{
+.container {
   max-width: calc(100% - 20px);
   margin: $baseSpacing auto;
 }
@@ -217,11 +226,13 @@ Container sets an element for setting the width to 100% and centering.
 ****
 
 **Position**
+
 ```scss
 .position-relative
 .position-absolute
 .position-fixed
 ```
+
 ****
 
 **Visibility**
@@ -229,8 +240,7 @@ Container sets an element for setting the width to 100% and centering.
 ```scss
 // Display: none
 .hide
-
-// Display: block
+  // Display: block
 .display
 ```
 
@@ -259,21 +269,22 @@ $z-index-map: (
 ```
 
 ****
-###Typography
+
+### Typography
 
 **Font Family**
+
 ```scss
 // font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 .font-sans
-
-// font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  // font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 .font-serif
-
-// font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  // font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 .font-mono
 ```
 
 **Font Size**
+
 ```scss
 .font-sm
 .font-default
@@ -284,6 +295,7 @@ $z-index-map: (
 ```
 
 **Text Transformation, Decorations, Overflow, Align**
+
 ```scss
 
 // Transformations
@@ -291,20 +303,17 @@ $z-index-map: (
 .lowercase
 .capitalize
 .normal-case
-
-//Decorations
+  //Decorations
 .underlined
 .overline
 .lineThrough
 .none
-
-//Overflow
+  //Overflow
 .overflow
 .text-overflow
 .overflow-clip
 .text-decoration-none
-
-//Align
+  //Align
 .text-right
 .text-center
 .text-left
@@ -313,19 +322,18 @@ $z-index-map: (
 
 ****
 **Padding**
+
 ```scss
 .p-1
 .p-2
 .p-3
 .p-4
 .p-5
-
 .p-x-1
 .p-t-2
 .p-r-3
 .p-b-4
 .p-l-5
-
 .p-y-1
 .p-t-2
 .p-r-3
@@ -333,20 +341,20 @@ $z-index-map: (
 .p-l-5
 
 ```
+
 **Margin**
+
 ```scss
 .m-1
 .m-2
 .m-3
 .m-4
 .m-5
-
 .m-x-1
 .m-t-2
 .m-r-3
 .m-b-4
 .m-l-5
-
 .m-t-1
 .m-r-2
 .m-b-3
@@ -356,19 +364,22 @@ $z-index-map: (
 
 ****
 
-###Sizing
+### Sizing
+
 Sizing comes in two flavors:
+
 1. Percentage
+
 ```scss
 .w-25p
 ```
 
 2. REM unit
+
 ```scss
 .h //height
 .w //width
-
-//example
+  //example
 .h-10
 
 $height-width-scale: (
@@ -407,23 +418,23 @@ $height-width-scale: (
 ```
 
 ****
-###Borders
+
+### Borders
+
 ```scss
 // rounds the corners of a border
 .b-rounded
-
-// border - px line width - border style
+  // border - px line width - border style
 .b-1-solid // Outputs border with a solid 1px width
-
-// You can even determine what border sides
+  // You can even determine what border sides
 .b-b-1-solid // Outputs border with a solid 1px width that is on the bottom
-
-// In order to color a border you can simply use the following syntax
-// with any color:
+  // In order to color a border you can simply use the following syntax
+  // with any color:
 .b-black
 ```
 
 **Border Decorations**
+
 ```scss
 .b-1-wave
 .b-1-solid
@@ -433,22 +444,32 @@ $height-width-scale: (
 ```
 
 ****
-###Effects
+
+### Effects
+
 **Shadowing**
+
 ```scss
-.raise-1-[[color]]
+.raise-1-[[color]
+
+]
 .raise-2-black
 .raise-3-primary
 ```
 
 **Opacity**
+
 ```scss
 .opacity-25 // 0.25
 .opacity-50 // 0.50
 .opacity-75 // 0.75
-.opacity-100 // 1
+.opacity-100
+
+// 1
 ```
+
 **Cursor**
+
 ```scss
 .cursor-auto
 .cursor-default
@@ -460,6 +481,7 @@ $height-width-scale: (
 ```
 
 **User-select**
+
 ```scss
 .select-none
 .select-text
@@ -468,24 +490,158 @@ $height-width-scale: (
 ```
 
 ****
-###SVG
-Much like Tailwind you can style svg's that primarily use path as it's main attribute.
-I suggest using [zondicons](http://www.zondicons.com/)
+
+### SVG
+
+Much like Tailwind you can style svg's that primarily use path as it's main attribute. I suggest
+using [zondicons](http://www.zondicons.com/)
 
 ```scss
   .fill-svg {
-    fill: currentColor;
-  }
-  .stroke-svg {
-    stroke: currentColor;
-  }
+  fill: currentColor;
+}
+
+.stroke-svg {
+  stroke: currentColor;
+}
 
 // TO color  after using either fill-svg or stroke-svg use text coloring
 .fill-svg .text-primary
 ```
 
 ****
-##Compositions
-Documentation TBD
 
+## Compositions
 
+As alluded to before, compositions are pre-made classes made to style commonly used elements.
+
+**Box**
+As it sounds, .box is a simple class that wraps the element in a borderless container. The said container has a drop
+shadow.
+
+```scss
+// box - level - color
+.box-low-primary
+.box-med-primary
+.box-low-primary
+```
+
+****
+
+**Button**
+Primarily there are three types of buttons:
+
+1. Regular
+2. Line
+3. Fab
+
+```scss
+.btn {
+  @extend .b-rounded, .font-md, .b-gray, .b-1-solid, .uppercase, .m-2, .cursor-pointer, .font-sans,
+  .font-strong;
+  // .btn-[color] is a flat button tha is colored.
+  // btn - color
+  .btn-primary
+}
+
+// btn - line - color
+.btn-line-primary
+```
+
+**Fab button**
+
+```scss
+.btn-fab
+  //btn - fab - color
+.btn-fab-primary
+```
+
+**Round Button**
+
+```scss
+.btn-round
+  //btn - round - line (which is by default solid ) - color
+.btn-round-line-primary
+  //btn - round - color
+.btn-round-primary
+```
+
+****
+
+## Input forms
+
+**Label**
+
+Label styling is very simple.
+
+```scss
+  .label {
+  @extend .font-strong, .font-sans;
+}
+```
+
+**Input**
+
+```scss
+.input {
+  @extend .b-rounded, .b-b-1-solid, .b-gray, .bg-gray, .opacity-75, .b-l-none, .b-r-none, .b-t-none,
+  .focus\:b-b-2-solid, .focus\:b-black, .bg-white, .font-sans, .m-y-2, .p-t-2,
+  .focus\:raise-1-gray, .p-x-1;
+}
+// input - color
+.input-primary
+
+.input-rounded {
+  border-radius: 16px;
+  @extend .b-b-1-solid, .b-gray, .bg-gray, .opacity-75, .b-l-none, .b-r-none, .b-t-none,
+  .focus\:b-b-2-solid, .focus\:b-black, .bg-white, .font-sans, .m-y-2, .p-t-2,
+  .focus\:raise-1-gray, .p-x-2;
+}
+
+// input - rounded - color
+.input-rounded-primary
+```
+
+**Input & Textarea Disabled/ read-only**
+```scss
+    input:disabled,
+    textarea:read-only {
+      @extend .cursor-not-allowed, .opacity-100, .bg-gray;
+    }
+
+    input:read-only,
+    textarea:read-only {
+      @extend .cursor-text, .opacity-100, .bg-gray;
+    }
+```
+
+**Textarea**
+```scss
+    .textarea {
+      @extend .focus\:raise-1-gray, .b-1-solid, .b-gray, .b-rounded;
+    }
+
+    //textarea - color
+    .textarea-primary
+```
+
+**Drop-down/ Select**
+```scss
+    .select {
+      @extend .bg-white, .font-sans, .b-rounded;
+
+      option:nth-child(2n+1) {
+        @extend .bg-white, .opacity-50;
+      }
+    }
+
+  // select - color
+  .select-primary
+
+  .select-alt {
+    @extend .b-white, .b-1-solid, .opacity-75, .font-sans, .b-rounded;
+  }
+
+  // select - alt - primary
+  .select-alt-primary
+```
