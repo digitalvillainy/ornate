@@ -9,9 +9,33 @@ Highly inspired by other frameworks like Tailwind css, and Bulma Ornate CSS and 
 while you're writing your HTML. Whether you want to design using Ornate CSS' out-of-the-box solutions, or expand the
 utilities to fit your projects, Ornate empowers your decision while remaining light and non-invasive.
 
-[Installation](#installation)
+### [Installation](#installation)
 
-[Basic Usage](#basicUsage)
+### [Basic Usage](#basicUsage)
+
+### [The Grid System](#the-grid-system)
+
+### [Placement](#placement)
+
+### [Responsiveness](#responsiveness)
+
+### [Pre-Built Utility Classes](#pre-built-utility-classes)
+
+### [Colors](#colors)
+
+### [Layout](#layout)
+
+### [Typography](#typography)
+
+### [Sizing](#sizing)
+
+### [Borders](#borders)
+
+### [Effects](#effects)
+
+### [SVG](#svg)
+
+### [Compositions](#compositions)
 
 ### <a name="installation"></a> Installation
 
@@ -23,11 +47,16 @@ The recommended way of using Ornate is downloading it via the npm:
 
 Include "ornate_css/scss/index.scss" into your own .sass or .scss file.
 
+[![](https://data.jsdelivr.com/v1/package/npm/ornate_css/badge)](https://www.jsdelivr.com/package/npm/ornate_css)
+
 ```scss
 //import Ornate css
 
-@import "./node_modules/ornate_css/scss/index.scss
+@import "./node_modules/ornate_css/scss.12ba3e41.css
+
 ```
+### use a CDN
+https://cdn.jsdelivr.net/npm/ornate_css@0.1.7/scss.12ba3e41.min.css
 
 Built directly into OrnateCSS is [normalize.css](https://necolas.github.io/normalize.css/), a css file that essentially
 resets a browsers default styling and forces uniformity for reliable consistency when styling your site.
@@ -68,7 +97,7 @@ As you see you can see, when setting properties you can choose to set a side or 
 One can even review the above and notice a pattern when wit comes to declaring properties. Knowing that
 "m" stands for margin, you can then assume tha "p" stands for padding.
 
-### The Grid System
+### <a name="the-grid-system"></a> The Grid System
 
 Being powered by [Gaudiamus](https://gaudiamus-css.github.io/), Ornate also uses CSS Grid. The grid system is now easier
 to implement.
@@ -99,7 +128,7 @@ Any Combination is possible:
 </div>
 ```
 
-### Placement
+### <a name="placement"></a>  Placement
 
 You can place elements on the x and y-axis of the grid-area with ease:
 
@@ -114,7 +143,7 @@ You can place elements on the x and y-axis of the grid-area with ease:
 
 ```
 
-### Responsiveness
+### <a name="responsiveness"></a> Responsiveness
 
 What about breakpoints? We use a markup similar to tailwind css to tackle this. However, now the grid really starts to
 make the difference. Finally, you will have an overview of your breakpoints. Start with mobile and go up:
@@ -140,7 +169,7 @@ make the difference. Finally, you will have an overview of your breakpoints. Sta
 
 Responsiveness in Ornate allows you to adhoc allow different pre-built classes to be active at different breakpoints.
 
-## Pre-Built Utility Classes
+## <a name="pre-built-utility-classes"></a> Pre-Built Utility Classes
 
 There are two types of Utilities:
 
@@ -177,7 +206,7 @@ $shorthand-map: (
 $property-map: ("m":"margin", "p":"padding");
 ```
 
-### Colors:
+### <a name="colors"></a> Colors:
 
 Colors can be added to a background, borders or text.
 
@@ -210,7 +239,7 @@ $darkDangerColor: #b71c1c;
 
 ## Dashed Utilities
 
-### Layout
+### <a name="layout"></a> Layout
 
 **Container**
 
@@ -270,7 +299,7 @@ $z-index-map: (
 
 ****
 
-### Typography
+### <a name="typography"></a> Typography
 
 **Font Family**
 
@@ -364,7 +393,7 @@ $z-index-map: (
 
 ****
 
-### Sizing
+### <a name="sizing"></a> Sizing
 
 Sizing comes in two flavors:
 
@@ -419,7 +448,7 @@ $height-width-scale: (
 
 ****
 
-### Borders
+### <a name="borders"></a> Borders
 
 ```scss
 // rounds the corners of a border
@@ -445,12 +474,12 @@ $height-width-scale: (
 
 ****
 
-### Effects
+### <a name="effects"></a> Effects
 
 **Shadowing**
 
 ```scss
-.raise-1-[[color]
+.raise-1-[color]
 
 ]
 .raise-2-black
@@ -491,7 +520,7 @@ $height-width-scale: (
 
 ****
 
-### SVG
+### <a name="svg"></a> SVG
 
 Much like Tailwind you can style svg's that primarily use path as it's main attribute. I suggest
 using [zondicons](http://www.zondicons.com/)
@@ -511,7 +540,7 @@ using [zondicons](http://www.zondicons.com/)
 
 ****
 
-## Compositions
+## <a name="compositions"></a> Compositions
 
 As alluded to before, compositions are pre-made classes made to style commonly used elements.
 
@@ -605,45 +634,45 @@ Label styling is very simple.
 **Input & Textarea Disabled/ read-only**
 ```scss
     input:disabled,
-    textarea:read-only {
-      @extend .cursor-not-allowed, .opacity-100, .bg-gray;
-    }
+textarea:read-only {
+  @extend .cursor-not-allowed, .opacity-100, .bg-gray;
+}
 
-    input:read-only,
-    textarea:read-only {
-      @extend .cursor-text, .opacity-100, .bg-gray;
-    }
+input:read-only,
+textarea:read-only {
+  @extend .cursor-text, .opacity-100, .bg-gray;
+}
 ```
 
 **Textarea**
 ```scss
     .textarea {
-      @extend .focus\:raise-1-gray, .b-1-solid, .b-gray, .b-rounded;
-    }
+  @extend .focus\:raise-1-gray, .b-1-solid, .b-gray, .b-rounded;
+}
 
-    //textarea - color
-    .textarea-primary
+//textarea - color
+.textarea-primary
 ```
 
 **Drop-down/ Select**
 ```scss
     .select {
-      @extend .bg-white, .font-sans, .b-rounded;
+  @extend .bg-white, .font-sans, .b-rounded;
 
-      option:nth-child(2n+1) {
-        @extend .bg-white, .opacity-50;
-      }
-    }
-
-  // select - color
-  .select-primary
-
-  .select-alt {
-    @extend .b-white, .b-1-solid, .opacity-75, .font-sans, .b-rounded;
+  option:nth-child(2n+1) {
+    @extend .bg-white, .opacity-50;
   }
+}
 
-  // select - alt - primary
-  .select-alt-primary
+// select - color
+.select-primary
+
+.select-alt {
+  @extend .b-white, .b-1-solid, .opacity-75, .font-sans, .b-rounded;
+}
+
+// select - alt - primary
+.select-alt-primary
 ```
 
 # Thank you!
