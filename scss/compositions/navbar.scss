@@ -1,0 +1,6 @@
+.nav {
+  @extend .bg-primary, .text-white, .font-sans;
+  ul {
+    @extend .list-style-none;
+  }
+}
