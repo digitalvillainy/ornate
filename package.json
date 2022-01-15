@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "gaudiamus-css": "^1.2.1",
-    "node-forge": ">=0.10.0"
+    "node-forge": ">=1.0.0"
   }
 }
